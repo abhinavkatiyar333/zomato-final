@@ -1,0 +1,148 @@
+/* =========================
+   CSS THEME VARIABLES
+   Light & Dark (System)
+   ========================= */
+
+:root {
+  /* =========================
+     BACKGROUNDS
+     ========================= */
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fff3ee;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+
+  /* =========================
+     BORDERS
+     ========================= */
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  /* =========================
+     TEXT
+     ========================= */
+  --color-text: #1f2933;
+  --color-text-secondary: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  /* =========================
+     BRAND / ACCENT
+     ========================= */
+  --color-accent: #ff6b35;
+  --color-accent-hover: #e85a25;
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 14%, transparent);
+
+  /* =========================
+     STATUS COLORS
+     ========================= */
+  --color-danger: #e53935;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-info: #0284c7;
+
+  /* =========================
+     RADIUS
+     ========================= */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+  --font-stack: system-ui,-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+  /* =========================
+     SPACING
+     ========================= */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* =========================
+     SHADOWS / ELEVATION
+     ========================= */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.08);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.12);
+
+  /* =========================
+     MOTION
+     ========================= */
+  --transition-fast: 100ms ease;
+  --transition-base: 120ms cubic-bezier(.4,0,.2,1);
+  --transition-slow: 220ms ease;
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b0f14;
+    --color-surface: #111827;
+    --color-surface-alt: #1f2937;
+    --color-overlay: rgba(0, 0, 0, 0.65);
+
+    --color-border: #2b3443;
+    --color-border-strong: #3b4455;
+
+    --color-text: #f3f4f6;
+    --color-text-secondary: #9ca3af;
+    --color-text-inverse: #000000;
+
+    --color-accent: #ff8a5b;
+    --color-accent-hover: #ff7440;
+    --color-accent-soft: color-mix(in srgb, var(--color-accent) 22%, transparent);
+
+    --color-danger: #ef5350;
+    --color-success: #22c55e;
+    --color-warning: #fbbf24;
+    --color-info: #38bdf8;
+
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.5);
+    --shadow-md: 0 14px 40px rgba(0,0,0,.45);
+    --shadow-lg: 0 30px 70px rgba(0,0,0,.55);
+  }
+}
+
+/* =========================
+   BASE ELEMENT THEMING
+   ========================= */
+body {
+  font-family: var(--font-stack);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent-hover);
+}
+
+/* Focus ring (global accessibility) */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
