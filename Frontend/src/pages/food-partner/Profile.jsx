@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/profile.css';
 import { useParams } from 'react-router-dom';
-import API from '../api'; // ✅ central API client
+import API from "../../api"
+ // ✅ central API client
 
 const Profile = () => {
   const { id } = useParams();

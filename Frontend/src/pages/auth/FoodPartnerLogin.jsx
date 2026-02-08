@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../styles/auth-shared.css';
 import { useNavigate } from 'react-router-dom';
-import API from '../api'; // ✅ use central API client
+import API from "../../api"
+ // ✅ use central API client
 
 const FoodPartnerLogin = () => {
 

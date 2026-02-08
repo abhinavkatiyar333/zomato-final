@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/auth-shared.css';
-import API from '../api'; // ✅ central API client
+import API from "../../api"
+ // ✅ central API client
 
 const UserRegister = () => {
   const navigate = useNavigate();

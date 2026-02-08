@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import '../../styles/create-food.css';
 import { useNavigate } from 'react-router-dom';
-import API from '../api'; // ✅ central API client
+import API from "../../api"
+ // ✅ central API client
 
 const CreateFood = () => {
   const [name, setName] = useState('');

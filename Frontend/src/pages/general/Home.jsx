@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/reels.css';
 import ReelFeed from '../../components/ReelFeed';
-import API from '../api'; // ✅ central API client
+import API from "../../api"
+ // ✅ central API client
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
