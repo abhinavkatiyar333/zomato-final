@@ -9,18 +9,26 @@ const foodPartnerRoutes = require('./routes/food-partner.routes');
 const app = express();
 
 app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "https://zomato-final-amber.vercel.app"
-    ],
-    credentials: true
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+
+    if (
+      origin.includes("localhost") ||
+      origin.includes("vercel.app")
+    ) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true
 }));
 
 app.use(cookieParser());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Hello World");
+  res.send("Hello World");
 });
 
 app.use('/api/auth', authRoutes);
