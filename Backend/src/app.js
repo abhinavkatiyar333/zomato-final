@@ -1,4 +1,3 @@
-// create server
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -12,7 +11,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://zomato-app-indol.vercel.app"
+        "https://zomato-final-amber.vercel.app"
     ],
     credentials: true
 }));
